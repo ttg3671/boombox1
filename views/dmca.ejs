@@ -1,0 +1,332 @@
+<%- include("./includes/head.ejs", { data2: '' }); %>
+
+<link rel="stylesheet" href="/style.css">
+
+<body>
+	<header>
+		<%- include("./includes/header.ejs"); %>
+	</header>
+
+	<div class="loading-spinner" id="loadingSpinner">
+	  <img src="/cube.webp" alt="Your Logo" class="logoSp">
+	  <div class="spinner"></div>
+     </div>
+
+	<section>
+		<%- include("./includes/nav1.ejs", { myArray: catData }); %>
+	</section>
+
+	<section>
+		<div class="container-fluid bg-light div2 p-0">
+			<div class="row">
+				<div class="col-12 col-md-2 leftAds" style="background: #f0f0f0;">
+					<div class="desktopAds">
+						<% if (data13[0] && data13.length > 0) { %>
+							<% if (data13[0].code.trim() != '') { %>
+					               <%- data13[0].code %>
+					          <% } else { %>
+								<a href="#" class="dskLink" data-ads-id="<%= data13[0].ads_id %>" target="_blank" style="text-decoration: none;">
+									<div class="card border-0" style="width: auto;">
+										<img src="https://api.hiphopboombox.com/api/uploads/<%= data13[0].image %>" class="card-img-top" alt="<%= data13[0].title %>">
+									</div>
+								</a>
+							<% } %>
+						<% } else { %>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                   crossorigin="anonymous"></script>
+              <!-- side ad -->
+              <ins class="adsbygoogle"
+                   style="display:block;width:100%;height:auto"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="7722858213"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+					</div>
+
+					<div class="mobileAds">
+						<% if (data14[0] && data14.length > 0) { %>
+							<a href="#" class="mobLink" data-ads-id="<%= data14[0].ads_id %>" target="_blank" style="text-decoration: none;">
+								<div class="card border-0" style="width: auto;">
+									<img src="https://api.hiphopboombox.com/api/uploads/<%= data14[0].image %>" class="card-img-top" alt="<%= data14[0].title %>">
+								</div>
+							</a>
+						<% } else { %>
+              <script async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                  crossorigin="anonymous">
+              </script>
+              <!-- top ad -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:500px;height:90px"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="8720245119"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+					</div>
+				</div>
+
+				<% if(data != '') { %>
+					<div class="col-12 col-md-8 div12">
+                              <div class="row">
+                              	<div class="col-12 col-sm-12 text-center deskDiv">
+								<script async 
+									src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+								    crossorigin="anonymous">
+								</script>
+								<!-- top ad -->
+								<ins class="adsbygoogle"
+								     style="display:inline-block;width:728px;height:90px"
+								     data-ad-client="ca-pub-8432136941148227"
+								     data-ad-slot="8720245119"></ins>
+								<script>
+								     (adsbygoogle = window.adsbygoogle || []).push({});
+								</script>
+							</div>
+							
+							<div class="col-12 col-sm-12 mt-3 mb-3 text-center">
+								<h2><%= data.name %></h2>
+							</div>
+
+							<div class="col-12 col-sm-12 mb-3">
+								<div class="p-2" id="descp"></div>
+							</div>
+
+							<div class="col-12" style="height: 100px;"></div>
+						</div>
+					</div>
+				<% } else { %>
+          <div class="col-12 col-md-8 p-0">
+            <div class="row">
+              <div class="col-12 col-sm-12 text-center mb-5" style="font-weight: 700; font-size: 15px;">No data found...</div>
+            </div>
+          </div>
+        <% } %>
+
+        <div class="col-12 col-md-2 rightAds" style="background: #f0f0f0;">
+					<div class="desktopAds">
+						<% if (data13[1] && data13.length > 0) { %>
+							<% if (data13[1].code.trim() != '') { %>
+                <%- data13[1].code %>
+              <% } else { %>
+				        <a href="#" class="dskLink" data-ads-id="<%= data13[1].ads_id %>" target="_blank" style="text-decoration: none;">
+					        <div class="card border-0" style="width: auto;">
+					          <img src="https://api.hiphopboombox.com/api/uploads/<%= data13[1].image %>" class="card-img-top" alt="<%= data13[1].title %>">
+					        </div>
+				        </a>
+				      <% } %>
+			      <% } else { %>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                   crossorigin="anonymous"></script>
+              <!-- side ad -->
+              <ins class="adsbygoogle"
+                   style="display:block;width:100%;height:auto"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="7722858213"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+			    </div>
+
+			    <div class="mobileAds">
+						<% if (data14[1] && data14.length > 0) { %>
+							<a href="#" class="mobLink" data-ads-id="<%= data14[1].ads_id %>" target="_blank" style="text-decoration: none;">
+								<div class="card border-0" style="width: auto;">
+									<img src="https://api.hiphopboombox.com/api/uploads/<%= data14[1].image %>" class="card-img-top" alt="<%= data14[1].title %>">
+								</div>
+							</a>
+						<% } else { %>
+              <script async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                  crossorigin="anonymous">
+              </script>
+              <!-- top ad -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:500px;height:90px"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="8720245119"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<%- include("./includes/footer.ejs"); %>
+	</footer>
+
+	<script>
+		const data1 = <%- JSON.stringify(data) %>;
+		const data13 = <%- JSON.stringify(data13) %>;
+      	const data14 = <%- JSON.stringify(data14) %>;
+	</script>
+
+	<script type="text/javascript">
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        // console.log(loadingSpinner);
+    
+	    	setTimeout(function() {
+            if (loadingSpinner) {
+              loadingSpinner.style.display = 'none';
+            }
+        	}, 2000);
+
+        	globalThis.document.addEventListener('DOMContentLoaded', () => {
+        		function getMobileOS() {
+		        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+		        // Check for iOS
+		        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		            return "iOS";
+		        }
+
+		        // Check for Android
+		        if (/android/i.test(userAgent)) {
+		            return "Android";
+		        }
+
+		        return "Unknown";
+		    }
+
+	        const os = getMobileOS();
+	        // console.log(os);
+
+	        globalThis.document.querySelectorAll('.dskLink').forEach(button => {
+	            const adsId = button.getAttribute('data-ads-id');
+	            // console.log(adsId);
+	            addDskLink(adsId, button);
+	        });
+
+	        globalThis.document.querySelectorAll('.mobLink').forEach(button => {
+	            const adsId = button.getAttribute('data-ads-id');
+	            // console.log(adsId);
+	            addMobLink(adsId, button);
+	        });
+
+	        function addDskLink(id, btn) {
+	        	// console.log(id, btn);
+	        	
+	        	const ml1 = data13.length > 0 && 
+							data13.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+				// console.log(ml1);
+
+				const ml2 = data14.length > 0 &&
+							data14.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+				// console.log(ml2);
+
+				if (ml1 == false && ml2.length > 0) {
+					if (os == 'iOS') {
+						btn.setAttribute("href", ml2[0].ios);
+					}
+
+					else {
+						btn.setAttribute("href", ml2[0].android);
+					}
+				}
+				else {
+					if (os == 'iOS') {
+						btn.setAttribute("href", ml1[0].ios);
+					}
+
+					else {
+						btn.setAttribute("href", ml1[0].android);
+					}
+				}
+	        }
+
+	        function addMobLink(id, btn) {
+	        	// console.log(id, btn);
+
+				const ml1 = data13.length > 0 && 
+							data13.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+				// console.log(ml1);
+
+				const ml2 = data14.length > 0 &&
+							data14.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+				// console.log(ml2);
+
+				// console.log(ml1 == false && ml2.length > 0);
+
+				if (ml1 == false && ml2.length > 0) {
+					if (os == 'iOS') {
+						btn.setAttribute("href", ml2[0].ios);
+					}
+
+					else {
+						btn.setAttribute("href", ml2[0].android);
+					}
+				}
+				else {
+					if (os == 'iOS') {
+						btn.setAttribute("href", ml1[0].link_ios);
+					}
+
+					else {
+						btn.setAttribute("href", ml1[0].link_android);
+					}
+				}
+	        }
+
+
+        		const data = data1;
+        		// console.log(data.description);
+
+        		// Function to convert text to HTML
+					function textToHtml(text) {
+					    // Split text by lines
+					    const lines = text.split('\n');
+
+					    // Initialize an empty array to hold HTML elements
+					    let html = '';
+
+					    // Iterate through each line
+					    for (let line of lines) {
+					    		let content = line;
+
+        					// Convert *text* to <strong>text</strong>
+        					content = content.replace(/\*(.*?)\*/g, '<b>$1</b>');
+
+					        if (line.startsWith('###')) {
+					            // Heading level 3
+					            html += `<h3>${line.replace(/^###/, '')}</h3>`;
+					        } 
+					        else if (line.startsWith('##')) {
+					            // Heading level 3
+					            html += `<h5>${line.replace(/^##/, '')}</h5>`;
+					        }
+					        else if (line.trim() === '') {
+					            // Skip empty lines
+					            continue;
+					        } else {
+					            // Regular paragraph
+					            html += `<p class="mt-3">${content}</p>`;
+					        }
+					    }
+
+					    return html;
+					}
+
+					// Insert HTML into the content div
+					document.getElementById('descp').innerHTML = textToHtml(data.description);
+        	})
+    </script>
+
+</body>
+
+<%- include("./includes/end.ejs"); %>

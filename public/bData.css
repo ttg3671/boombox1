@@ -1,0 +1,87 @@
+.blog_div3 {
+	height: 400px;
+}
+
+.blog_div3 img {
+	height: 100%;
+	object-fit: scale-down;
+	border-radius: 10px;
+}
+
+.blog_div2, .blog_div3, .blog_div4 {
+	margin-bottom: 30px;
+}
+
+#button-container {
+  background-color: black;
+  padding: 10px; /* Optional: Add padding to adjust the size of the blue background */
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+#button-container button {
+  border: none;
+  background: black;
+  color: white;
+}
+
+.btn_deactive {
+	display: none;
+}
+
+.btn_active {
+	display: inline-block;
+}
+
+.desktopAds, .mobileAds {
+  width: 100%;
+}
+
+/*.leftAds, .rightAds {
+  width: 100%;
+}*/
+
+@media (max-width: 500px) {
+	.mobileAds {
+		text-align: center;
+	}
+
+	.blog_div2, .blog_div3, .blog_div4 {
+		margin-bottom: 10px;
+	}
+
+	.blog_div3 {
+		height: 200px;
+	}
+
+	.deskDiv {
+		display: none;
+	}
+
+	.blog_div3 img {
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.leftAds {
+		padding: 10px 20px 0 20px;
+	}
+
+	.rightAds {
+		padding: 10px 20px 0 20px;
+	}
+
+  .leftAds img {
+  	width: auto;
+  	height: 300px;
+  }
+
+  .rightAds img {
+  	width: auto;
+  	height: 300px;
+  }
+
+	.blog_div1, .col-md-8 {
+		padding: 0 25px;
+	}
+}

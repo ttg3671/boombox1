@@ -1,0 +1,912 @@
+<%- include("./includes/head.ejs", { data2: '' }); %>
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/all.css">
+
+<body>
+  <header>
+    <%- include("./includes/header.ejs"); %>
+  </header>
+
+  <div class="loading-spinner" id="loadingSpinner">
+    <img src="/cube.webp" alt="Your Logo" class="logoSp">
+    <div class="spinner"></div>
+  </div>
+    
+  <% if(data12.length >= 1 && heading == 'eye candy videos' || heading == 'sneakers') { %>
+    <section id="footer_popup" class="footer_popup">
+      <div class="container position-fixed top-0 bg-black" style="z-index: 1050 !important;">
+          <div class="row text-white">
+              <div class="col-12 fp2 pt-1 pb-1 ps-1 pe-3">
+                  <% if(data12[0].title != null || data12[0].title != '') { %>
+                    <div class="text-center text-wrap"><%= data12[0].title %></div>
+                  <% } %>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h6 class="text-wrap text-uppercase" style="font-size: 12px;">
+                      <img src="https://i.ibb.co/YTG0NWH/removal-ai-05798ca5-1590-4c7f-ba40-4de1847cf462-hiphop3.png" width="40" height="30" />
+                      HipHopBoomBox
+                    </h6>
+                    <!-- <a href="<%= data12[0].link1 %>" target="_blank" class="btn btn-outline-light">
+                      <i class="fa-brands fa-android fa-xl" style="color: #78C257;"></i>
+                      <i class="fa-brands fa-apple fa-xl" style="color: #555555;"></i>
+                    </a> -->
+                    <a 
+                       id="platformLink" 
+                       href="#" 
+                       target="_blank" 
+                       class="btn border-0 pt-2 pb-2 pe-3 ps-3 bg-light text-uppercase" 
+                       style="color: #ee3483; font-size: 12px; font-weight: 600; border-radius: 50px;"
+                    >
+                      GET
+                    </a>
+                  </div>
+                
+                  <div class="d-flex align-items-center justify-content-between mt-1 text-uppercase">
+                    <h6 style="font-size: 12px;">
+                      <img src="" id="platformIcon" width="40" height="30" />
+                      Website
+                    </h6>
+                    <button 
+                            type="button" 
+                            class="btn text-white border pt-2 pb-2 pe-3 ps-3" 
+                            id="cont_btn" 
+                            style="border-radius: 50px; font-size: 12px; font-weight: 600;"
+                    >
+                      WEBSITE
+                    </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+  <% } %>
+
+  <section>
+    <%- include("./includes/nav1.ejs", { myArray: catData, name: heading }); %>
+  </section>
+
+  <section>
+    <div class="container-fluid p-0 bg-light">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-2 leftAds" style="background: #f0f0f0;">
+          <div class="desktopAds">
+            <% if (data13[0] && data13.length > 0) { %>
+              <% if (data13[0].code.trim() != '') { %>
+                <%- data13[0].code %>
+              <% } else { %>
+                <a href="#" class="dskLink" data-ads-id="<%= data13[0].ads_id %>" target="_blank" style="text-decoration: none;">
+                  <div class="card border-0" style="width: auto;">
+                    <img src="https://api.hiphopboombox.com/api/uploads/<%= data13[0].image %>" class="card-img-top" alt="<%= data13[0].title %>">
+                  </div>
+                </a>
+              <% } %>
+            <% } else { %>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                   crossorigin="anonymous"></script>
+              <!-- side ad -->
+              <ins class="adsbygoogle"
+                   style="display:block;width:100%;height:auto"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="7722858213"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+          </div>
+
+          <div class="mobileAds">
+            <% if (data14[0] && data14.length > 0) { %>
+              <a href="#" class="mobLink" data-ads-id="<%= data14[0].ads_id %>" target="_blank" style="text-decoration: none;">
+                <div class="card border-0" style="width: auto;">
+                  <img src="https://api.hiphopboombox.com/api/uploads/<%= data14[0].image %>" class="card-img-top" alt="<%= data14[0].title %>">
+                </div>
+              </a>
+            <% } else { %>
+              <script async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                  crossorigin="anonymous">
+              </script>
+              <!-- top ad -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:500px;height:90px"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="8720245119"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+          </div>
+        </div>
+
+        <% if(showData != '') { %>
+          <div class="col-12 col-sm-12 col-md-8 divM12">
+            <div class="row">
+              <div class="col-12 col-sm-12 text-center deskDiv">
+                <script async 
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                    crossorigin="anonymous">
+                </script>
+                <!-- top ad -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-8432136941148227"
+                     data-ad-slot="8720245119"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+            
+              <div class="col-12 col-sm-12 pt-3 d-flex justify-content-between">
+                <h5 class="headingM1" style="color: #000000;">Popular artists</h5>
+                <a href="#" style="color: #ee3483;">Show all</a>
+              </div>
+
+              <div class="col-12 col-sm-12 divM13 mt-3">
+                <div class="row row-cols-2 row-cols-md-4 my-gutter d-flex flex-nowrap">
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 divM11 border-0">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Artist Name</h5>
+                          <p class="card-text">Artist</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 divM11 border-0">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Artist Name</h5>
+                          <p class="card-text">Artist</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 divM11 border-0">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Artist Name</h5>
+                          <p class="card-text">Artist</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 divM11 border-0">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Artist Name</h5>
+                          <p class="card-text">Artist</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 divM11 border-0">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Artist Name</h5>
+                          <p class="card-text">Artist</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-12 mt-5 d-flex justify-content-between">
+                <h5 class="headingM1" style="color: #000000;">Popular albums and singles</h5>
+                <a href="#" style="color: #ee3483;">Show all</a>
+              </div>
+
+              <div class="col-12 col-sm-12 divM13 mt-3">
+                <div class="row row-cols-2 row-cols-md-4 my-gutter d-flex flex-nowrap">
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Album Name</h5>
+                          <p class="card-text">Artist Name<p>
+                        </div>                      
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-12 mt-5 d-flex justify-content-between">
+                <h5 class="headingM1" style="color: #000000;">Popular radio</h5>
+                <a href="#" style="color: #ee3483;">Show all</a>
+              </div>
+
+              <div class="col-12 col-sm-12 divM13 mt-3">
+                <div class="row row-cols-2 row-cols-md-4 my-gutter d-flex flex-nowrap">
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>                      
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-sm-12 mt-5 d-flex justify-content-between">
+                <h5 class="headingM1" style="color: #000000;">Featured Charts</h5>
+                <a href="#" style="color: #ee3483;">Show all</a>
+              </div>
+
+              <div class="col-12 col-sm-12 divM13 mt-3">
+                <div class="row row-cols-2 row-cols-md-4 my-gutter d-flex flex-nowrap">
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>                      
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-sm-12 mt-5 d-flex justify-content-between">
+                <h5 class="headingM1" style="color: #000000;">Playlist from our editors</h5>
+                <a href="#" style="color: #ee3483;">Show all</a>
+              </div>
+
+              <div class="col-12 col-sm-12 divM13 mt-3">
+                <div class="row row-cols-2 row-cols-md-4 my-gutter d-flex flex-nowrap">
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/mmms.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a href="#">
+                      <div class="card h-100 div11">
+                        <div class="skeleton1"></div>
+                        <img src="" data-src="/bn.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur<p>
+                        </div>                      
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-12 mt-5 d-none">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item <%= page == 1 ? 'disabled' : '' %>" id="prev-page">
+                      <a class="page-link" href="<%= page <= 1 ? '#' : '?page=' + (page - 1) %>">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link <%= page == 1 ? 'active' : '' %>" href="?page=1">1</a></li>
+                    <li class="page-item"><a class="page-link <%= page == 2 ? 'active' : '' %>" href="?page=2">2</a></li>
+                    <li class="page-item"><a class="page-link <%= page == 3 ? 'active' : '' %>" href="?page=3">3</a></li>
+                    <li class="page-item <%= page == totalCount ? 'disabled' : '' %>" id="next-page">
+                      <a class="page-link" href="<%= page == totalCount ? '#' : '?page=' + (page + 1) %>">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="col-12 col-sm-12" style="height: 50px;"></div>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="col-12 col-sm-12 col-md-8 p-0">
+            <div class="row">
+              <div class="col-12 col-sm-12 text-center mb-5" style="font-weight: 700; font-size: 15px;">No data found...</div>
+            </div>
+          </div>
+        <% } %>
+
+        <div class="col-12 col-sm-12 col-md-2 rightAds" style="background: #f0f0f0;">
+          <div class="desktopAds">
+            <% if (data13[1] && data13.length > 0) { %>
+              <% if (data13[1].code.trim() != '') { %>
+                <%- data13[1].code %>
+              <% } else { %>
+                <a href="#" class="dskLink" data-ads-id="<%= data13[1].ads_id %>" target="_blank" style="text-decoration: none;">
+                  <div class="card border-0" style="width: auto;">
+                    <img src="https://api.hiphopboombox.com/api/uploads/<%= data13[1].image %>" class="card-img-top" alt="<%= data13[1].title %>">
+                  </div>
+                </a>
+              <% } %>
+            <% } else { %>
+              <script async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                crossorigin="anonymous">
+              </script>
+              <!-- side ad -->
+              <ins class="adsbygoogle"
+                style="display:block;width:100%;height:auto"
+                data-ad-client="ca-pub-8432136941148227"
+                data-ad-slot="7722858213"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+          </div>
+
+          <div class="mobileAds">
+            <% if (data14[1] && data14.length > 0) { %>
+              <a href="#" class="mobLink" data-ads-id="<%= data14[1].ads_id %>" target="_blank" style="text-decoration: none;">
+                <div class="card border-0" style="width: auto;">
+                  <img src="https://api.hiphopboombox.com/api/uploads/<%= data14[1].image %>" class="card-img-top" alt="<%= data14[1].title %>">
+                </div>
+              </a>
+            <% } else { %>
+              <script async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432136941148227"
+                  crossorigin="anonymous">
+              </script>
+              <!-- top ad -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:500px;height:90px"
+                   data-ad-client="ca-pub-8432136941148227"
+                   data-ad-slot="8720245119"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <%- include("./includes/lang_select.ejs"); %>
+  </section>
+
+  <footer>
+    <%- include("./includes/footer.ejs"); %>
+  </footer>
+
+  <script>
+    const data12 = <%- JSON.stringify(data12) %>;
+    const data13 = <%- JSON.stringify(data13) %>;
+    const data14 = <%- JSON.stringify(data14) %>;
+  </script>
+
+  <script type="text/javascript">
+    // let currentPage = Number(cp) || 1;
+
+    // console.log(currentPage);
+    
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    // console.log(loadingSpinner);
+    
+    setTimeout(function() {
+      if (loadingSpinner) {
+        loadingSpinner.style.display = 'none';
+      }
+    }, 2000);
+
+      const footer_popup = data12 != '' ? globalThis.document.getElementById("footer_popup") : '';
+    
+      const popShown = sessionStorage.getItem('popShown');
+    
+      if (footer_popup) {
+        if (popShown) {
+          footer_popup.style.display = 'none';
+        }
+        else {
+          footer_popup.style.display = 'block';
+        }
+
+        cont_btn.addEventListener('click', (e) => {
+          footer_popup.style.display = 'none';
+          sessionStorage.setItem('popShown', 'true');
+        })
+      }
+
+    globalThis.document.addEventListener('DOMContentLoaded', () => {
+          function getMobileOS() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check for iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            // Check for Android
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            return "Unknown";
+          }
+
+          const os = getMobileOS();
+          // console.log(os);
+
+          globalThis.document.querySelectorAll('.dskLink').forEach(button => {
+              const adsId = button.getAttribute('data-ads-id');
+              // console.log(adsId);
+              addDskLink(adsId, button);
+          });
+
+          globalThis.document.querySelectorAll('.mobLink').forEach(button => {
+              const adsId = button.getAttribute('data-ads-id');
+              // console.log(adsId);
+              addMobLink(adsId, button);
+          });
+
+      function addDskLink(id, btn) {
+            // console.log(id, btn);
+            
+            const ml1 = data13.length > 0 && 
+              data13.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+        // console.log(ml1);
+
+        const ml2 = data14.length > 0 &&
+              data14.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+        // console.log(ml2);
+
+        if (ml1 == false && ml2.length > 0) {
+          if (os == 'iOS') {
+            btn.setAttribute("href", ml2[0].ios);
+          }
+
+          else {
+            btn.setAttribute("href", ml2[0].android);
+          }
+        }
+        else {
+          if (os == 'iOS') {
+            btn.setAttribute("href", ml1[0].ios);
+          }
+
+          else {
+            btn.setAttribute("href", ml1[0].android);
+          }
+        }
+      }
+
+      function addMobLink(id, btn) {
+            // console.log(id, btn);
+
+        const ml1 = data13.length > 0 && 
+              data13.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+        // console.log(ml1);
+
+        const ml2 = data14.length > 0 &&
+              data14.filter(i => Number(i.ads_id) === Number(id))
+                              .map(i => ({ ads_id: i.ads_id, android: i.link_android, ios: i.link_ios }));
+        // console.log(ml2);
+
+        // console.log(ml1 == false && ml2.length > 0);
+
+        if (ml1 == false && ml2.length > 0) {
+          if (os == 'iOS') {
+            btn.setAttribute("href", ml2[0].ios);
+          }
+
+          else {
+            btn.setAttribute("href", ml2[0].android);
+          }
+        }
+        else {
+          if (os == 'iOS') {
+            btn.setAttribute("href", ml1[0].link_ios);
+          }
+
+          else {
+            btn.setAttribute("href", ml1[0].link_android);
+          }
+        }
+      }
+
+      
+      if (footer_popup) {
+
+        function getBrowserInfo() {
+          const userAgent = navigator.userAgent;
+          let browserName;
+
+          if (userAgent.includes("Chrome")) {
+              browserName = "Google Chrome";
+          } else if (userAgent.includes("Firefox")) {
+              browserName = "Mozilla Firefox";
+          } else if (userAgent.includes("Safari")) {
+              browserName = "Apple Safari";
+          } else if (userAgent.includes("MSIE") || userAgent.includes("Trident")) {
+              browserName = "Internet Explorer";
+          } else if (userAgent.includes("Edge")) {
+              browserName = "Microsoft Edge";
+          } else {
+              browserName = "Unknown Browser";
+          }
+
+          return browserName;
+        }
+
+        // Call the function to check the browser
+        let brw = getBrowserInfo();
+        // console.log(brw); 
+
+        const platformIcon = document.getElementById("platformIcon");
+      
+        if (brw == 'Google Chrome') {
+          platformIcon.setAttribute("src", "https://i.ibb.co/LnxmfV7/chrome1.png");
+        }
+        else if (brw == 'Mozilla Firefox') {
+          platformIcon.setAttribute("src", "https://i.ibb.co/5ThGz4Q/firefox2.png");
+        }
+        else if (brw == 'Apple Safari') {
+          platformIcon.setAttribute("src", "https://i.ibb.co/BwSf5ZK/safari3.png");
+        }
+        else if (brw == 'Internet Explorer') {
+          platformIcon.setAttribute("src", "https://i.ibb.co/yBTdnFn/ie2.png");
+        }
+        else if (brw == 'Microsoft Edge') {
+          platformIcon.setAttribute("src", "https://i.ibb.co/DwSs9yx/removal-ai-838c4b30-aadb-45b7-b124-fc91054bbf79-me2.png");
+        }
+        else {
+          platformIcon.setAttribute("src", "https://i.ibb.co/LnxmfV7/chrome1.png");
+        }
+
+        const platformLink = document.getElementById("platformLink");
+
+        platformLink.addEventListener('click', (e) => {
+          footer_popup.style.display = 'none';
+          sessionStorage.setItem('popShown', 'true');
+        })
+
+
+        if (os === "Android") {
+            // platformIcon.classList.add("fa-android");
+            // platformIcon.setAttribute("src", "https://i.ibb.co/pJ37VFy/android.png");
+            platformLink.setAttribute("href", data12[0].link1);
+        } else if (os === "iOS") {
+            // platformIcon.setAttribute("src", "https://i.ibb.co/qRC2GsZ/ios4.png");
+            platformLink.setAttribute("href", data12[0].link2);
+        } else {
+            // Handle unknown platform if needed
+            // platformIcon.setAttribute("src", "https://i.ibb.co/pJ37VFy/android.png");
+            platformLink.setAttribute("href", data12[0].link1);
+        }
+      }       
+      
+      const ct1 = document.querySelectorAll('.card-text');
+
+      const ct2 = document.querySelectorAll('.card-title');
+
+      // console.log(ct);
+
+      const heading = document.querySelector('.heading1');
+
+      // console.log(heading);
+
+      const baseImgUrl = "https://api.hiphopboombox.com/api/uploads/";
+
+      const images2 = document.querySelectorAll('.div11 img');
+
+      images2.forEach(img => {
+        img.onload = () => {
+          img.previousElementSibling.style.display = 'none'; // Hide skeleton
+          img.style.display = 'block'; // Show image
+        };
+
+        img.onerror = () => {
+          // Hide the image
+          img.style.display = 'none';
+                  
+          // Show the skeleton loader
+          const skeleton = img.previousElementSibling;
+          if (skeleton) {
+            skeleton.style.display = 'block';
+          }
+        };
+
+        const imgElement = img.getAttribute('data-src');
+        // console.log(imgElement); 
+                
+        // console.log(!imgElement.includes('www.w3schools') && !imgElement.includes('static.worldstarhiphop'));
+
+        if (!imgElement.includes('www.w3schools') && !imgElement.includes('static.worldstarhiphop')) {
+            img.setAttribute('src', imgElement);
+        }
+
+        else {
+          img.setAttribute('src', imgElement); // Set src to trigger loading
+        }
+      });
+
+      const images3 = document.querySelectorAll('.divM11 img');
+
+      images3.forEach(img => {
+        img.onload = () => {
+          img.previousElementSibling.style.display = 'none'; // Hide skeleton
+          img.style.display = 'block'; // Show image
+        };
+
+        img.onerror = () => {
+          // Hide the image
+          img.style.display = 'none';
+                  
+          // Show the skeleton loader
+          const skeleton = img.previousElementSibling;
+          if (skeleton) {
+            skeleton.style.display = 'block';
+          }
+        };
+
+        const imgElement = img.getAttribute('data-src');
+        // console.log(imgElement); 
+                
+        // console.log(!imgElement.includes('www.w3schools') && !imgElement.includes('static.worldstarhiphop'));
+
+        if (!imgElement.includes('www.w3schools') && !imgElement.includes('static.worldstarhiphop')) {
+            img.setAttribute('src', imgElement);
+        }
+
+        else {
+          img.setAttribute('src', imgElement); // Set src to trigger loading
+        }
+      });
+
+      function truncateText(text, m) {
+        if (text.length > m) {
+          return text.slice(0, m).trim() + '...'; // Truncate text and add "..."
+        }
+        return text;
+      }
+    })
+  </script>
+</body>
+
+<%- include("./includes/end.ejs"); %>
